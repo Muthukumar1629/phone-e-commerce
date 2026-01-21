@@ -1,0 +1,180 @@
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<footer class="advanced-footer py-5 mt-5 text-light" style="height: 350px;">
+  <div class="container py-3">
+    <div class="row gy-4">
+
+      <!-- Pixel Pro -->
+      <div class="col-lg-3 mb-3" data-aos="fade-right" >
+        <h3 class="footer-title gradient-text">Pixel Pro</h3>
+        <p class="small text-muted mt-3">
+          The Google Pixel smartphone series delivers pure Android excellence with advanced AI and world-class camera innovation.
+          Powered by Google Tensor chips, it’s built for smarter performance, security, and creativity.
+        </p>
+      </div>
+
+      <!-- Useful Links -->
+      <div class="col-6 col-lg-2 offset-lg-1 mb-3" data-aos="zoom-in" >
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'home' %}" class="footer-link"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="{% url 'login' %}" class="footer-link"><i class="fa fa-sign-in"></i> Login</a></li>
+          <li><a href="{% url 'register' %}" class="footer-link"><i class="fa fa-user-plus"></i> Register</a></li>
+          <li><a href="{% url 'logout' %}" class="footer-link"><i class="fa fa-sign-out"></i> Logout</a></li>
+          <li><a href="{% url 'collection' %}" class="footer-link"><i class="fa fa-cubes"></i> Collection</a></li>
+          <li><a href="{% url 'cart' %}" class="footer-link"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+          <li><a href="{% url 'favviewpage' %}" class="footer-link"><i class="fa fa-heart"></i> Favourite</a></li>
+        </ul>
+      </div>
+
+      <!-- Pixel Variant -->
+      <div class="col-6 col-lg-2 mb-3" data-aos="fade-up" data-aos-duration="1000">
+        <h5 class="footer-heading">Pixel Variants</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Pixel 6 / 6A / 6 Pro</a></li>
+          <li><a href="#" class="footer-link">Pixel 7 / 7A / 7 Pro</a></li>
+          <li><a href="#" class="footer-link">Pixel 8 / 8A / 8 Pro</a></li>
+          <li><a href="#" class="footer-link">Pixel 9 / 9A / 9 Pro</a></li>
+          <li><a href="#" class="footer-link">Pixel 10 / 10 Fold</a></li>
+        </ul>
+      </div>
+
+      <!-- Samsung -->
+      <div class="col-6 col-lg-2 mb-3" data-aos="fade-left" data-aos-duration="1000">
+        <h5 class="footer-heading">Samsung Galaxy</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Galaxy S24 / Ultra</a></li>
+          <li><a href="#" class="footer-link">Galaxy S25 / Ultra</a></li>
+          <li><a href="#" class="footer-link">Z Fold & Flip</a></li>
+          <li><a href="#" class="footer-link">Galaxy A Series</a></li>
+        </ul>
+      </div>
+
+      <!-- iPhone -->
+      <div class="col-6 col-lg-2 mb-3" data-aos="flip-up" data-aos-duration="1000">
+        <h5 class="footer-heading">iPhone</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">iPhone 17 Air</a></li>
+          <li><a href="#" class="footer-link">iPhone 17 Pro</a></li>
+          <li><a href="#" class="footer-link">iPhone 17 Pro Max</a></li>
+          <li><a href="#" class="footer-link">iPhone SE 2025</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+ 
+  <ul class="footer-circles">
+    <li></li><li></li><li></li><li></li><li></li>
+  </ul>
+</footer>
+
+<script>
+  AOS.init();
+</script>
+
+<style>
+  /* --- Advanced Footer Styling --- */
+  .advanced-footer {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a, #1b1b1b, #000);
+    color: #ccc;
+    backdrop-filter: blur(10px);
+  }
+
+  .footer-heading {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .footer-heading::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #00ffff;
+    margin-top: 6px;
+    border-radius: 2px;
+  }
+
+  .footer-link {
+    color: #aaa;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 8px;
+    transition: all 0.4s ease;
+  }
+
+  .footer-link:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    transform: translateX(8px);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #00eaff, #00ff9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s infinite alternate;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  .footer-circles {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .footer-circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px; height: 20px;
+    background: rgba(0, 255, 255, 0.1);
+    animation: floatAnim 20s infinite linear;
+    bottom: -150px;
+    border-radius: 50%;
+  }
+
+  .footer-circles li:nth-child(1) {
+    left: 25%; width: 80px; height: 80px; animation-delay: 0s;
+  }
+  .footer-circles li:nth-child(2) {
+    left: 10%; width: 40px; height: 40px; animation-delay: 2s; animation-duration: 25s;
+  }
+  .footer-circles li:nth-child(3) {
+    left: 70%; width: 100px; height: 100px; animation-delay: 4s;
+  }
+  .footer-circles li:nth-child(4) {
+    left: 50%; width: 60px; height: 60px; animation-delay: 6s; animation-duration: 30s;
+  }
+  .footer-circles li:nth-child(5) {
+    left: 85%; width: 120px; height: 120px; animation-delay: 8s; animation-duration: 35s;
+  }
+
+  @keyframes floatAnim {
+    0% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-1000px) rotate(360deg);
+      opacity: 1.5;
+    }
+  }
+
+  footer .container {
+    position: relative;
+    z-index: 10;
+  }
+</style>

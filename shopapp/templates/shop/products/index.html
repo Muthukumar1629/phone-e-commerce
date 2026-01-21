@@ -1,0 +1,44 @@
+{% extends 'shop/layout/main.html' %}
+
+{% block title %}
+    Shop | Pro
+{% endblock title %}
+
+{% block content %}
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">{{ category_name }} Products</h4>
+                <hr style="border-color:#b8bfc2">
+            </div>
+
+            {% include 'shop/inc/message.html' %}
+
+            {% for item in products %}
+            <div class="col-md-4 col-lg-3"  data-aos="fade-right" data-aos-offset="500" data-aos-easing="ease-in-sine" >
+                <div class="card my-3" style="border-radius: 20px;">
+                    <img src="{{ item.product_image.url }}" class="card-img-top" alt="{{ item.name }}" style="height: 200px;">
+                    <a href="{% url 'product_details' category_name item.name %}">
+                        <div class="c1">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ item.name }}</h5>
+                            <p class="card-text mb-0">
+                                <span class="float-start"><s>Rs{{ item.original_price|stringformat:'d' }}</s></span>
+                                <span class="float-end">Rs{{ item.selling_price|stringformat:'d' }}</span>
+                            </p>
+                        </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    AOS.init();
+  });
+</script>
+{% endblock content %}

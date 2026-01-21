@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-aqua" href="{% url 'home' %}">
+      <i class="fa fa-cart-plus"></i> PixelPro Store
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa fa-home"></i> Home<span></span></a>
+        <!-- User Auth -->
+        {% if request.user.is_authenticated %}
+          <a class="nav-link" href="{% url 'register' %}"><i class="fa fa-user-circle"></i> {{ request.user }}<span></span></a>
+          <a class="nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout<span></span> </a>
+        {% else %}
+          <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login<span></span></a>
+          <a class="nav-link" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register<span></span></a>
+        {% endif %}
+            <a class="nav-link" href="{% url 'collection' %}"><i class="fa fa-cubes"></i> Collection<span></span></a> 
+            <a class="nav-link" href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i> Cart<span></span></a> 
+            <a class="nav-link" href="{% url 'favviewpage' %}"><i class="fa fa-heart"></i> Favourite<span></span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+ .navbar {
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+  }
+
+  nav a {
+    position: relative;
+    left: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white !important;
+    text-decoration: none;
+    padding: 10px 15px;
+    justify-content: space-between;
+    transition: 0.4s ease-in-out;
+  }
+
+  nav a:hover {
+    color: aqua !important;
+    cursor: pointer;
+  }
+
+  nav a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom: 3px solid rgb(27, 235, 235);
+    border-radius: 10px;
+    transform: scale(0) translateY(30px);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  nav a:hover span {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  .navbar-brand {
+    color: aqua !important;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  .navbar-brand:hover {
+    color: aqua !important;
+  }
+  
+
+  .text-aqua {
+    color: aqua !important;
+  }
+
+  .nav-link:hover i {
+    text-shadow: 0 0 10px aqua !important;
+  }
+
+  
+</style>
+

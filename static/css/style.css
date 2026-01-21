@@ -1,0 +1,36 @@
+.carousel-item img{
+    object-fit: cover;
+    object-position: top;
+    height: 100vh;
+    overflow: hidden;
+}
+img{
+    height: 100vh;
+}
+.float-start{
+    font-weight: bold;
+    color: red;
+}
+
+.float-end{
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 2px;
+    border-radius: 3px;
+}
+.pic-box
+.hot{
+    background-color: orangered;
+    color: white;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}

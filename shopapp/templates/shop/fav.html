@@ -1,0 +1,42 @@
+{% extends 'shop/layout/main.html' %}
+
+{% block title %}
+    Shop | Pro
+{% endblock %}
+
+{% block content %}
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">Favourite Item</h4>
+                <hr style="border-color: #b8bfc2;">
+            </div>
+
+            <table class="table table-bordered">
+                <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Unit</th>
+                    <th>Remove</th>
+                </tr>
+
+                {% for item in fav %}
+                <tr>
+                    <td>
+                        <img src="{{ item.product.product_image.url }}"  alt="{{ item.product.name }}">
+                    </td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.product.selling_price|stringformat:"d" }}</td>
+                    <td>
+                        <a href="{% url 'remove_fav' item.id %}" onClick="return confirm('Are You Sure? to Remove')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
